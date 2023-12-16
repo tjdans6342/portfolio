@@ -287,6 +287,15 @@ button:focus {
   background-color: var(--color-accent);
 }
 
+.skill__description {
+  font-size: 1.2rem;
+}
+
+.skill__description--strong {
+  color: var(--color-accent);
+  filter: brightness(100%);
+}
+
 /* Work */
 #work {
   background-color: var(--color-primary);
@@ -385,7 +394,34 @@ button:focus {
   transform: translateX(-50%);
 }
 
-/* Testimonial */
+/* Awards */
+.awards {
+  margin: 2rem 0 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.award {
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: default;
+}
+
+.award--strong {
+  display: inline-block;
+  color: var(--color-accent);
+  filter: brightness(70%);
+  transition: all 250ms ease-out;
+}
+
+.award:hover .award--strong {
+  color: var(--color-accent-variant);
+  filter: brightness(100%);
+}
+
+/* Testimonial
 .testimonials {
   margin: 3rem;
 }
@@ -417,4 +453,40 @@ button:focus {
   color: var(--color-accent);
   font-weight: bold;
   filter: brightness(70%);
+} */
+
+/* Arrow up */
+.arrow-up {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  border-radius: 100%;
+  text-align: center;
+  box-shadow: 5px 5px 0px 0px var(--color-accent);
+}
+/* Footer */
+#contact {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.contact__links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.contact__link {
+  transition: color 250ms ease-out;
+}
+
+.contact__link:hover {
+  color: var(--color-accent);
 }
