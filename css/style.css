@@ -55,9 +55,30 @@ button:focus {
   outline: 1px solid var(--color-accent);
 }
 
+/* Common */
+.section {
+  padding: 4rem;
+  text-align: center;
+}
+
+.max-container {
+  max-width: var(--size-max-width);
+  margin: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
 /* Header */
 .header {
-  background-color: var(--color-primary);
+  background-color: transparent;
   position: fixed;
   top: 0;
   width: 100%;
@@ -66,6 +87,14 @@ button:focus {
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  transition: all 250ms ease;
+}
+
+.header--dark {
+  background-color: var(--color-primary);
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .header__logo {
@@ -90,7 +119,9 @@ button:focus {
 
 .header__menu__item {
   /* 박스의 안쪽 여백을 주고 싶으면 padding을 이용 */
+  display: block;
   padding: 8px 16px;
+  border-bottom: 1px solid transparent;
 }
 
 .header__menu__item:hover {
@@ -102,25 +133,13 @@ button:focus {
   border-radius: 4px;
 }
 
-/* Common */
-.section {
-  padding: 4rem;
-  text-align: center;
-}
-
-.max-container {
-  max-width: var(--size-max-width);
-  margin: auto;
-}
-
-.title {
-  font-size: 2.5rem;
-  margin: 1rem 0;
-}
-
-.description {
+.header__toggle {
+  display: none;
+  color: var(--color-white);
   font-size: 1.5rem;
-  margin: 0.5rem 0;
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
 }
 
 /* Home */
@@ -469,6 +488,7 @@ button:focus {
   border-radius: 100%;
   text-align: center;
   box-shadow: 5px 5px 0px 0px var(--color-accent);
+  transition: opacity 250ms ease-in;
 }
 /* Footer */
 #contact {
@@ -494,7 +514,7 @@ button:focus {
 
 @media screen and (max-width: 768px) {
   .section {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
 
   .title {
@@ -506,15 +526,25 @@ button:focus {
   }
 
   .header {
+    background-color: var(--color-primary);
     flex-direction: column;
     align-items: start;
   }
 
+  .header__toggle {
+    display: block;
+  }
+
   .header__menu {
+    display: none;
     flex-direction: column;
     text-align: center;
-    padding: 1rem 4rem;
+    margin: 1rem 4rem;
     gap: 1rem;
+  }
+
+  .header__menu.open {
+    display: flex;
   }
 
   .header__nav {
@@ -546,6 +576,7 @@ button:focus {
 
   .skills {
     grid-template-columns: 1fr;
+    margin: 2rem 1rem;
   }
 
   .skill__description {
