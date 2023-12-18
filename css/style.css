@@ -104,12 +104,15 @@ button:focus {
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 1rem;
 }
 
 .header__logo__img {
-  width: 36px;
-  height: 36px;
+  /* width: 36px;
+  height: 36px; */
+  color: var(--color-primary-variant);
+  filter: brightness(400%);
+  font-size: 32px;
 }
 
 .header__logo__title {
